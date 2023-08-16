@@ -1,0 +1,25 @@
+build:
+  model_server: TRITON
+  arguments:
+   - max_batch_size: 1
+   - num_replicas: 1
+   - dynamic_batch_delay_ms: 0
+environment_variables: {}
+external_package_dirs: []
+model_metadata: {}
+model_name: bert-truss-triton-v2
+python_version: py39
+requirements:
+- transformers
+- torch
+- sentencepiece
+resources:
+  accelerator: A10G
+  cpu: 500m
+  memory: 512Mi
+  use_gpu: true
+secrets:
+  my_secret_message: im a secret message!
+system_packages: []
+runtime:
+  predict_concurrency: 128
