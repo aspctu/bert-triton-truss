@@ -24,7 +24,7 @@ def invoke_bert_triton_model(text):
 
    request = json.dumps(request)
    response = requests.post(
-      "http://localhost:8000/v2/models/model/infer", data=request, headers=headers
+      "http://localhost:8080/v1/models/model:predict", data=request, headers=headers
    )
 
    print(response.text)
